@@ -1,13 +1,15 @@
 {
   "name": "rental-mobil",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Aplikasi Rental Mobil Firdaus Rent Car",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["rental", "mobil", "nodejs", "express"],
+  "author": "Agami Ilmansyah",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.2.0",
