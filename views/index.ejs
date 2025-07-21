@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firdaus Rent Car</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/public/css/style.css">
+
+<style>
+    [data-parallax] {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: url('https://svgshare.com/i/wfG.svg') repeat-x;
+      animation: wave-animation 10s linear infinite;
+    }
+    @keyframes wave-animation {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1000px; }
+    }
+    .info-graphic {
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: white;
+      padding: 60px 0;
+    }
+    .info-graphic .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Promo Modal -->
+  <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="promoModalLabel">🎉 Promo Spesial!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Dapatkan diskon hingga <strong>20%</strong> untuk pemesanan bulan ini!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Firdaus Rent Car</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="armada.html">Armada</a></li>
+            -->
+          <a class="nav-link" href="/armada">Armada</a>
+          <a class="nav-link" href="/pemesanan">Pemesanan</a>
+          <a class="nav-link" href="/kontak">Kontak</a>
+          <!-- <li class="nav-item"><a class="nav-link" href="#gallery">Pemesanan</a></li> -->          
+          <!-- <li class="nav-item"><a class="nav-link" href="#testimoni">Kontak</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Existing Sections here... -->
+
+
+  <!-- Banner Infografik -->
+  <section class="info-graphic text-center animate__animated animate__fadeInUp">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="icon">🚗</div>
+          <h5>Armada Lengkap</h5>
+          <p>Pilihan kendaraan sesuai kebutuhan Anda, dari city car hingga premium class.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="icon">💼</div>
+          <h5>Driver Profesional</h5>
+          <p>Pengemudi berpengalaman, ramah dan tepat waktu.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="icon">🛡️</div>
+          <h5>Asuransi & Aman</h5>
+          <p>Perjalanan dilindungi asuransi dan kendaraan selalu dalam kondisi prima.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero dengan Parallax -->
+  <section id="home" class="position-relative py-5 text-center text-white d-flex align-items-center justify-content-center" style="height: 100vh; background-image: url('/public/images/hero.jpg'); background-size: cover; background-position: center;" data-parallax>
+    <div class="hero-overlay"></div>
+    <div class="container fade-in hero-content">
+      <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">Sewa Mobil Nyaman & Terjangkau</h1>
+      <p class="lead animate__animated animate__fadeIn animate__delay-1s">Nikmati perjalanan bersama armada terbaik dari Firdaus Rent Car.</p>
+      <a href="#form" class="btn btn-light btn-lg mt-3 animate__animated animate__fadeInUp animate__delay-2s">Pesan Sekarang</a>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- Armada -->
+  <section class="py-5 bg-white fade-in" id="armada">
+    <div class="container">
+      <h2 class="text-center mb-4">Armada Kami</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/images/avanza.jpg" class="card-img-top" alt="Avanza">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Avanza</h5>
+              <p class="card-text">Lepas kunci / dengan supir</p>
+              <p class="text-primary fw-bold">Rp 400.000 / hari</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/images/innova.jpg" class="card-img-top" alt="Innova">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Innova</h5>
+              <p class="card-text">Lepas kunci / dengan supir</p>
+              <p class="text-primary fw-bold">Rp 600.000 / hari</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/images/alphard.jpg" class="card-img-top" alt="Alphard">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Alphard</h5>
+              <p class="card-text">Dengan supir</p>
+              <p class="text-primary fw-bold">Rp 1.500.000 / hari</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Mobil -->
+  <section class="py-5 bg-light fade-in" id="gallery">
+    <div class="container">
+      <h2 class="text-center mb-4">Galeri Mobil</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><img src="/public/images/gallery1.jpg" class="img-fluid rounded shadow-sm"></div>
+        <div class="col-md-4"><img src="/public/images/gallery2.jpg" class="img-fluid rounded shadow-sm"></div>
+        <div class="col-md-4"><img src="/public/images/gallery3.jpg" class="img-fluid rounded shadow-sm"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-5 bg-white fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Pertanyaan Umum</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Apakah tersedia layanan antar jemput?</button></h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Ya, kami menyediakan layanan antar jemput untuk area tertentu.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Bagaimana cara melakukan pemesanan?</button></h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Anda dapat memesan melalui WhatsApp, email, atau langsung mengisi formulir pemesanan online kami.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni Section -->
+  <section id="testimoni" class="py-5 bg-light fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Apa Kata Pelanggan</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"Pelayanannya memuaskan, mobil bersih dan nyaman. Recommended!"</p>
+              <small class="text-muted">- Rina, Jakarta</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"Supir datang tepat waktu dan ramah. Akan sewa lagi minggu depan."</p>
+              <small class="text-muted">- Agus, Bekasi</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"Harga sesuai, pelayanan oke. Proses pemesanan mudah dan cepat."</p>
+              <small class="text-muted">- Dwi, Depok</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lokasi dan Kontak -->
+  <section id="lokasi" class="py-5 bg-white fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Lokasi & Kontak</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Alamat Kami</h5>
+          <p>Jl. Merdeka No. 123, Jakarta</p>
+          <p>Email: firdaus@rentalmobil.id</p>
+          <p>WhatsApp: 0812-XXXX-XXXX</p>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-4x3">
+            <iframe src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Firdaus Rent Car. WhatsApp: 0812-XXXX-XXXX | Email: firdaus@rentalmobil.id</p>
+  </footer>
+
+  <script>
+    const promoShown = localStorage.getItem("promoShown");
+    if (!promoShown) {
+      const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+      promoModal.show();
+      localStorage.setItem("promoShown", true);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

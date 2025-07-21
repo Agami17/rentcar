@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firdaus Rent Car</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/public/css/style.css">
+  <style>
+    [data-parallax] {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: url('https://svgshare.com/i/wfG.svg') repeat-x;
+      animation: wave-animation 10s linear infinite;
+    }
+    @keyframes wave-animation {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1000px; }
+    }
+    .info-graphic {
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: white;
+      padding: 60px 0;
+    }
+    .info-graphic .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .armada-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .armada-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <!-- Promo Modal -->
+  <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="promoModalLabel">🎉 Promo Spesial!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Dapatkan diskon hingga <strong>20%</strong> untuk pemesanan bulan ini!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Firdaus Rent Car</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="armada.html">Armada</a></li>
+          <li class="nav-item"><a class="nav-link" href="pemesanan.html">Pemesanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Armada Section -->
+  <section id="armada" class="py-5 bg-light fade-in">
+    <div class="container">
+      <h2 class="text-center mb-5">Pilih Armada Sesuai Kebutuhan Anda</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card armada-card h-100 shadow-sm">
+            <img src="/images/avanza.jpg" class="card-img-top" alt="Toyota Avanza">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Avanza</h5>
+              <p class="card-text">Mobil keluarga irit dan nyaman, cocok untuk perjalanan dalam dan luar kota.</p>
+              <span class="badge bg-success">Lepas Kunci / Dengan Supir</span>
+              <h6 class="mt-2 text-primary fw-bold">Rp 400.000 / hari</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card armada-card h-100 shadow-sm">
+            <img src="/images/innova.jpg" class="card-img-top" alt="Toyota Innova">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Innova Zenix</h5>
+              <p class="card-text">Kabin luas dan kenyamanan maksimal untuk keluarga atau tamu VIP.</p>
+              <span class="badge bg-success">Lepas Kunci / Dengan Supir</span>
+              <h6 class="mt-2 text-primary fw-bold">Rp 600.000 / hari</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card armada-card h-100 shadow-sm">
+            <img src="/images/alphard.jpg" class="card-img-top" alt="Toyota Alphard">
+            <div class="card-body">
+              <h5 class="card-title">Toyota Alphard</h5>
+              <p class="card-text">Kemewahan premium untuk acara penting, dengan supir profesional.</p>
+              <span class="badge bg-secondary">Dengan Supir</span>
+              <h6 class="mt-2 text-primary fw-bold">Rp 1.500.000 / hari</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="armada" class="py-5 bg-light fade-in">
+  <div class="container">
+    <!-- <h2 class="text-center mb-5">Pilih Armada Sesuai Kebutuhan Anda</h2> -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card armada-card h-100 shadow-sm">
+          <img src="/images/camry.jpg" class="card-img-top" alt="Toyota Camry">
+          <div class="card-body">
+            <h5 class="card-title">Toyota Camry</h5>
+            <p class="card-text">Sedan premium dengan kenyamanan tinggi, cocok untuk eksekutif dan perjalanan bisnis.</p>
+            <span class="badge bg-secondary">Dengan Supir</span>
+            <h6 class="mt-2 text-primary fw-bold">Rp 1.200.000 / hari</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card armada-card h-100 shadow-sm">
+          <img src="/images/altis.jpg" class="card-img-top" alt="Toyota Corolla Altis">
+          <div class="card-body">
+            <h5 class="card-title">Toyota Corolla Altis</h5>
+            <p class="card-text">Sedan nyaman dan efisien untuk keperluan harian maupun dinas luar kota.</p>
+            <span class="badge bg-success">Lepas Kunci / Dengan Supir</span>
+            <h6 class="mt-2 text-primary fw-bold">Rp 700.000 / hari</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card armada-card h-100 shadow-sm">
+          <img src="/images/vios.jpg" class="card-img-top" alt="Toyota Vios">
+          <div class="card-body">
+            <h5 class="card-title">Toyota Vios</h5>
+            <p class="card-text">Mobil kompak untuk perjalanan dalam kota yang praktis dan hemat bahan bakar.</p>
+            <span class="badge bg-success">Lepas Kunci / Dengan Supir</span>
+            <h6 class="mt-2 text-primary fw-bold">Rp 500.000 / hari</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    const promoShown = localStorage.getItem("promoShown");
+    if (!promoShown) {
+      const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+      promoModal.show();
+      localStorage.setItem("promoShown", true);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
